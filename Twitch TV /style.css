@@ -1,0 +1,27 @@
+a,a:hover{
+  text-decoration: none;
+  color: black;
+}
+.online{
+  background-color: #AED581;
+}
+.offline{
+  background-color: #BDBDBD;
+}
+.closed{
+  background-color: #E57373;
+}
+.img{
+  height: 70px;
+  width: 70px;
+  padding: 5px 5px 5px 5px;
+}
+.user{
+  margin : 4%;
+  border-radius: 10px;
+  border:2px solid #3F51B5;
+  min-height: 210px;
+}
+.contents{
+  padding: 5px 10px 5px 10px;
+}

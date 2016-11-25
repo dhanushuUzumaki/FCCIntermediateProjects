@@ -1,0 +1,69 @@
+.quote-box {
+  background-color: white;
+  color: black;
+  position: relative;
+  min-width: 90vh;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10%;
+  padding: 5px 30px 10px 10px;
+  margin-left: 3%;
+}
+
+
+@media screen and (max-width: 680px) {
+  .quote-box{
+    min-width:70vh;
+  }
+}
+
+.quote i {
+  font-size: 30px;
+  margin-right: 3px;
+}
+
+.quote {
+  padding: 25px;
+  font-size: 35px;
+}
+
+.author {
+  font-size: 20px;
+  clear: both;
+  padding-top: 20px;
+  text-align: right;
+}
+
+.buttons {
+  color: white;
+  font-size: 20px;
+  padding-bottom : 10px;
+}
+#new-quote{
+  opacity : 100;
+  border : 0px;
+  border-radius : 5px;
+  height: 35px;
+}
+
+#new-quote:hover {
+  opacity : 0.6;
+  transition:all 0.5s ease;
+}
+
+#tweet {
+  float: left;
+  padding: 0px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 25px;
+  height: 35px;
+  width: 40px;
+  color: white;
+  margin-left: 3%;
+  opacity:1;
+}
+#tweet:hover{
+   opacity : 0.6;
+  transition:all 0.4s ease;
+}

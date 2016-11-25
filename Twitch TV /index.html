@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app = "TwitchTv">
+  <head>
+    <title>Twitch TV</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="row">
+      <div align="center">
+        <h2>Twitch TV</h2>
+        <h6>by <em>Dhanushu Uzuamki</em></h6>
+      </div>
+    </div>
+    <div ng-controller = "TwitchController as twitch" align="center">
+      <div ng-repeat = "user in twitch.users">
+        <a ng-href = "{{user.link}}" target="_blank">
+          <div class="user col-md-3" ng-class = "{online:twitch.isOnline(this), offline:twitch.isOffline(this), closed:twitch.isClosed(this)}">
+            <img class="img img-circle img-responsive" ng-src="{{user.logo}}"/>
+            <div align = "center" class="contents">
+              <h5><b>{{user.name}}</b>({{user.presence}})</h5>
+              <p>
+                <i>{{user.playing}}</i>
+              </p>
+              {{user.status}}
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+    <script src = "app.js"></script>
+  </body>
+</html>

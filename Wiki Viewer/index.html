@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app = "WikiViewer">
+  <head>
+    <title>Wiki Viewer</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="row">
+      <div align="center">
+        <h2>Wiki Viewer</h2>
+        <h6>by <em>Dhanushu Uzuamki</em></h6>
+      </div>
+    </div>
+    <div ng-controller = "WikiController as wiki">
+      <div id = "searchbox" align = "center">
+        <input type = "text" ng-model = "wiki.searchText" ng-keyup="$event.which === 13 && wiki.search()" class="input-lg"/>
+        <a class = "btn btn-primary btn-xlg searchButton" ng-click = "wiki.search()"><span> <i class = "glyphicon glyphicon-search"></i> </span></a>
+        <a class="btn btn-primary btn-lg random" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Article</a>
+      </div>
+      <div ng-show = "wiki.searching" align="center" class="message">
+        <h3>Searching....</h3>
+      </div>
+      <div ng-show = "wiki.noResultsFound" align="center" class="message">
+        <h3>Sorry.. No Results Found</h3>
+      </div>
+      <div ng-repeat = "article in wiki.articles" ng-hide = "wiki.searching">
+        <a ng-href = "http://en.wikipedia.org/?curid={{article.pageid}}" target="_blank">
+        <div class = "article col-md-10" align = "center">
+          <h4>"{{article.title}}"</h4>
+          <p>
+            {{article.extract}}
+          </p>
+        </div>
+      </a>
+      </div>
+    </div>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+    <script src = "app.js"></script>
+  </body>
+</html>
